@@ -1,0 +1,144 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  #root {
+    width: 100%;
+  }
+  
+  .container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .app-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-title i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .app-header h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  
+  .latest-searches {
+    margin-bottom: 20px;
+  }
+  
+  .latest-searches ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .latest-searches li {
+    background-color: #e9ecef;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .latest-searches li:hover {
+    background-color: #d6d8db;
+  }
+  
+  .movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .movie-item {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .movie-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-item img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .movie-item h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 10px 0 0;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .movie-details {
+    margin: 20px 0;
+    background-color: #f8f8f8;
+    padding: 20px;
+    padding-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .movie-details img {
+    max-width: 200px;
+    border-radius: 8px;
+  }
+  
+  .movie-details p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 0;
+  }
+  
+  .movie-details h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+  
