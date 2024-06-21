@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
+﻿
 using MovieSearchApp_WebApi.Interfaces;
 using MovieSearchApp_WebApi.Models;
 using Microsoft.Extensions.Options;
@@ -16,8 +15,6 @@ namespace MovieSearchApp_WebApi.Services
         {
             _httpClient = httpClient;
             _apiKey = settings.Value.OmdbApiKey;
-            // Log or Debug the API key to ensure it's being set correctly
-            System.Diagnostics.Debug.WriteLine($"OMDb API Key: {_apiKey}");
         }
 
         public async Task<MovieSearchResult> SearchMoviesAsync(string title)

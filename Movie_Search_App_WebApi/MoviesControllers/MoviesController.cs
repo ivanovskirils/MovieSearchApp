@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using MovieSearchApp_WebApi.Interfaces;
 
 namespace MovieSearchApp_WebApi.Controllers
