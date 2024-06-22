@@ -1,0 +1,21 @@
+.latest-searches {
+    margin-bottom: 20px;
+  }
+  
+  .latest-searches ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .latest-searches li {
+    background-color: #e9ecef;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .latest-searches li:hover {
+    background-color: #d6d8db;
+  }
+  

@@ -1,4 +1,5 @@
 import React from 'react';
+import './movie-list.css';
 
 const MovieList = ({ movies = [], onSelect }) => {
   if (movies.length === 0) {

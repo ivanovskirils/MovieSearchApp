@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/buttons.css';
+import './movie-details.css';
 
-const MovieDetails = ({ title, year, plot, imdbRating, poster, onHide, className }) => {
+const MovieDetails = ({ title, year, plot, imdbRating, poster, onHide }) => {
   return (
-    <div className={`movie-details ${className}`}>
+    <div className="movie-details">
       <button className="button hide-button" onClick={onHide}>Hide</button>
       <h2>{title} ({year})</h2>
       <img src={poster} alt={`${title} Poster`} />

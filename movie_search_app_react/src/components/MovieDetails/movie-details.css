@@ -1,0 +1,51 @@
+.movie-details {
+    margin: 20px 0;
+    background-color: #f8f8f8;
+    padding: 20px;
+    padding-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .movie-details img {
+    max-width: 200px;
+    border-radius: 8px;
+  }
+  
+  .movie-details p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 0;
+  }
+  
+  .movie-details h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .button {
+    background-color: transparent ;
+    color: #333 ;
+    border: 2px solid #333 ;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  }
+  
+  .button:hover {
+    color: #fff ;
+    background-color: #333 ;
+    border-color: #333 ;
+  }
+  
+
+  .hide-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
