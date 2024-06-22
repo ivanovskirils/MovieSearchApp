@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MovieSearchApp_WebApi.Models;
 
-namespace MovieSearchApp_WebApi.Interfaces
+namespace MovieSearchApp_WebApi.Services.Interfaces
 {
     public interface IMovieService
     {

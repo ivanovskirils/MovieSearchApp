@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieSearchApp_WebApi.Interfaces;
+using MovieSearchApp_WebApi.Services.Interfaces;
 
 namespace MovieSearchApp_WebApi.Controllers
 {
@@ -8,10 +8,13 @@ namespace MovieSearchApp_WebApi.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _movieService;
+        private readonly ILogger<MoviesController> _logger;
 
-        public MoviesController(IMovieService movieService)
+
+        public MoviesController(IMovieService movieService, ILogger<MoviesController> logger)
         {
             _movieService = movieService;
+            _logger = logger;
         }
 
         [HttpGet("search")]
@@ -19,25 +22,36 @@ namespace MovieSearchApp_WebApi.Controllers
         {
             if (string.IsNullOrEmpty(title))
             {
+                _logger.LogWarning("SearchMovies called with empty title.");
                 return BadRequest("Title is required");
             }
 
-            var results = await _movieService.SearchMoviesAsync(title);
-
-            if (results == null || results.Search == null)
+            try
             {
-                return NotFound("No movies found.");
+                var results = await _movieService.SearchMoviesAsync(title);
+                return Ok(results);
             }
-
-            return Ok(results);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while searching for movies.");
+                return StatusCode(500, "Internal server error");
+            }
         }
 
 
         [HttpGet("{imdbID}")]
         public async Task<IActionResult> GetMovieDetails(string imdbID)
         {
-            var result = await _movieService.GetMovieDetailsAsync(imdbID);
-            return Ok(result);
+            try
+            {
+                var result = await _movieService.GetMovieDetailsAsync(imdbID);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while getting movie details.");
+                return StatusCode(500, "Internal server error");
+            }
         }
     }
 }

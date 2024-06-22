@@ -1,11 +1,14 @@
 ﻿namespace MovieSearchApp_WebApi.Models
 {
-    public class Movie
+    public class Movie : BaseMovie
     {
-        public string Title { get; set; }
-        public string Year { get; set; }
-        public string ImdbID { get; set; }
-        public string Type { get; set; }
-        public string Poster { get; set; }
+        public Movie(string title, string year, string imdbID, string type, string poster)
+            : base(title, year, imdbID, type, poster)
+        {
+        }
+
+        public Movie() : base()
+        {
+        }
     }
 }
