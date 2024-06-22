@@ -12,12 +12,13 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [queries, setQueries] = useState([]);
-  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSearch = async (query) => {
     try {
       setSelectedMovie(null);
-      const result = await axiosInstance.get(`/api/movies/search?title=${query}`);
+      setError(null);
+      const result = await axiosInstance.get(`/search?title=${query}`);
       const movies = result.data.search || [];
       setMovies(movies);
 
@@ -27,17 +28,19 @@ const App = () => {
       }
     } catch (error) {
       console.error('Error fetching movie search results:', error);
+      setError('An error occurred while fetching movie search results.');
     }
   };
 
   const handleSelectMovie = async (imdbID) => {
     try {
-      const result = await axiosInstance.get(`/api/movies/${imdbID}`);
+      setError(null);
+      const result = await axiosInstance.get(`/${imdbID}`);
       setSelectedMovie(result.data);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      setIsFadingOut(false);
     } catch (error) {
       console.error('Error fetching movie details:', error);
+      setError('An error occurred while fetching movie details.');
     }
   };
 
@@ -46,10 +49,7 @@ const App = () => {
   };
 
   const handleHideDetails = () => {
-    setIsFadingOut(true);
-    setTimeout(() => {
-      setSelectedMovie(null);
-    }, 400);
+    setSelectedMovie(null);
   };
 
   return (
@@ -61,8 +61,9 @@ const App = () => {
         </div>
         <SearchBar onSearch={handleSearch} />
       </header>
+      {error && <div className="error-message">{error}</div>}
       {selectedMovie && (
-        <div className={isFadingOut ? 'fade-out' : 'fade-in'}>
+        <div className="fade-in">
           <MovieDetails {...selectedMovie} onHide={handleHideDetails} />
         </div>
       )}

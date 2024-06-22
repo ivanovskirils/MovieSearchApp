@@ -5,11 +5,11 @@ using Newtonsoft.Json;
 
 public class MovieService : IMovieService
 {
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClient _httpClient;
     private readonly OmdbSettings _settings;
     private readonly ILogger<MovieService> _logger;
 
-    public MovieService(HttpClient httpClient, IOptions<OmdbSettings> settings, ILogger<MovieService> logger)
+    public MovieService(IHttpClient httpClient, IOptions<OmdbSettings> settings, ILogger<MovieService> logger)
     {
         _httpClient = httpClient;
         _settings = settings.Value;
