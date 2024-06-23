@@ -30,7 +30,7 @@ const SearchBar = ({ onSearch }) => {
           onKeyPress={handleKeyPress}
           placeholder="Search for a movie..."
         />
-        <button className="search-button" onClick={handleSearch}>
+        <button className="search-button" onClick={handleSearch} aria-label="search">
           <i className="fas fa-search"></i>
         </button>
       </div>
