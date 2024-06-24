@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+Movie Search React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description 
+This is a React-based web application for searching movies. Users can search for movies, view details, and see a list of their latest searches. The application uses modern React hooks and follows best practices for a clean and maintainable codebase.
 
-## Available Scripts
+### Features 
 
-In the project directory, you can run:
+Movie Search: Search for movies by title.
+Movie Details: View detailed information about a selected movie.
+Latest Searches: Keep track of the latest movie searches.
+Responsive Design: Mobile-friendly UI.
 
-### `npm start`
+### Technologies Used 
+React: Frontend framework for building user interfaces.
+Axios: HTTP client for making API requests.
+Jest: Testing framework for JavaScript.
+ESLint: Linter for identifying and fixing problems in JavaScript code.
+Babel: JavaScript compiler.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Getting Started 
+Prerequisites
+Make sure you have the following installed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Node.js
+npm (Node package manager)
+Installation
 
-### `npm test`
+### Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+git clone https://github.com/your-username/movie-search-react-app.git
+cd movie-search-react-app
 
-### `npm run build`
+### Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the Application
+To start the development server, run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+npm start
+Open http://localhost:3000 in your browser to view the app.
 
-### `npm run eject`
+### Running Tests
+To run the tests, use the following command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+npm test
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Building for Production
+To create a production build, run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+npm run build
+The production-ready files will be in the build directory.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Project Structure
+public/: Contains the static assets and the index.html file.
+src/: Contains the source code.
+components/: Reusable React components.
+LatestSearches/: Component for displaying the latest searches.
+MovieDetails/: Component for displaying movie details.
+MovieList/: Component for displaying a list of movies.
+SearchBar/: Component for the search bar.
+hooks/: Custom React hooks.
+App.js: Main App component.
+index.js: Entry point for the React app.
+axiosInstance.js: Axios instance configuration.
+reportWebVitals.js: For measuring performance.
+setupTests.js: Jest setup file.
+coverage/: Contains the test coverage reports.
+.env: Environment variables.
+babel.config.js: Babel configuration.
+eslintrc.json: ESLint configuration.
+jest.config.js: Jest configuration.
+jest.setup.js: Jest setup file.
+package.json: Project metadata and dependencies.
+package-lock.json: Dependency tree.
 
-## Learn More
+### Environment Variables
+To run this project, you will need to add the following environment variables to your .env file:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+makefile
+Copy code
+REACT_APP_API_KEY=your_api_key_here
+REACT_APP_API_URL=https://api.example.com
